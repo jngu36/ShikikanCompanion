@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Shikikan Companion</string>
+    <string name="menuRecipe">Recipe Calculator</string>
+    <string name="menuLogistic">Logistic Calculator</string>
+    <string name="menuBattery">Battery Calculator</string>
+    <string name="menu">Menu</string>
+    <string name="NumberDorms">Number of Dorms</string>
+    <string name="Comfort">Comfort</string>
+    <string name="Manpower">Manpower</string>
+    <string name="Ammo">Ammo</string>
+    <string name="Ration">Ration</string>
+    <string name="Part">Part</string>
+    <string name="recipeStandard">Standard Production</string>
+    <string name="recipeHeavy">Heavy Production</string>
+    <string name="hideNonEN">Hide Unreleased in EN</string>
+    <string name="Calculate">Calculate</string>
+</resources>
