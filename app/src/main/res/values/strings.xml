@@ -1,11 +1,12 @@
 <resources>
     <string name="app_name">Shikikan Companion</string>
     <string name="menuRecipe">Recipe Calculator</string>
+    <string name="menuList">Tactical Doll List</string>
     <string name="menuLogistic">Logistic Calculator</string>
     <string name="menuBattery">Battery Calculator</string>
     <string name="menu">Menu</string>
     <string name="NumberDorms">Number of Dorms</string>
-    <string name="Comfort">Comfort</string>
+    <string name="Comfort">Total Comfort</string>
     <string name="Manpower">Manpower</string>
     <string name="Ammo">Ammo</string>
     <string name="Ration">Ration</string>
@@ -14,4 +15,22 @@
     <string name="recipeHeavy">Heavy Production</string>
     <string name="hideNonEN">Hide Unreleased in EN</string>
     <string name="Calculate">Calculate</string>
+
+    <!--Display Doll-->
+    <string name="time">Time</string>
+    <string name="obtain">Obtain</string>
+    <string name="hp">HP</string>
+    <string name="firepower">Firepower</string>
+    <string name="evasion">Evasion</string>
+    <string name="accuracy">Accuracy</string>
+    <string name="rof">Rate of Fire</string>
+    <string name="critical">Critical</string>
+    <string name="ap">AP</string>
+    <string name="speed">Speed</string>
+    <string name="armor">Armor</string>
+    <string name="clip">Clip</string>
+    <string name="tile">Tile</string>
+    <string name="skill">Skill</string>
+    <string name="stats">Stats</string>
+
 </resources>

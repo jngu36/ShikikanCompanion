@@ -48,12 +48,16 @@ public class MainActivity extends AppCompatActivity {
                                 startActivity(intent);
                                 break;
                             case R.id.logistic:
-
+                                intent = new Intent(MainActivity.this, Logistic.class);
+                                startActivity(intent);
                                 break;
                             case R.id.battery:
                                 intent = new Intent(MainActivity.this, Battery.class);
                                 startActivity(intent);
                                 break;
+                            case R.id.List:
+                                intent = new Intent(MainActivity.this, Tlist.class);
+                                startActivity(intent);
                         }
                         return true;
                     }

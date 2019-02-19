@@ -18,13 +18,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"/>
-        <activity android:name=".Logistic"/>
-        <activity android:name=".Battery"
-            android:parentActivityName=".MainActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".Logistic" />
+        <activity
+            android:name=".Battery"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.AppCompat.Dialog" />
         <activity
             android:name=".Recipe"
             android:parentActivityName=".MainActivity" />
+
+
+        <activity android:name=".Tlist"
+            android:parentActivityName=".MainActivity" />
+
+        <activity android:name=".TacticalDisplay"
+            android:theme="@style/displayTheme"></activity>
     </application>
 
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

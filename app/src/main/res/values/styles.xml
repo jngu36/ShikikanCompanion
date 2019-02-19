@@ -14,4 +14,9 @@
         <item name="android:windowBackground">@drawable/background</item>
     </style>
 
+    <style name="displayTheme">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
 </resources>

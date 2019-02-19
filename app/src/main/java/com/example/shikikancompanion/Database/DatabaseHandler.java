@@ -9,35 +9,41 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Build;
 import android.util.Log;
 
+import com.example.shikikancompanion.Doll;
+import com.example.shikikancompanion.indexHolder;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
-import java.util.List;
 
 public class DatabaseHandler extends SQLiteOpenHelper {
 
     private static String DB_PATH = "";
-    private static String DB_NAME = "GLFADB.db";
+    private static String DB_NAME = "scdb.db";
     private SQLiteDatabase myDataBase;
     private final Context myContext;
 
     public DatabaseHandler(Context context) {
         super(context, DB_NAME, null, 1);
-        if(Build.VERSION.SDK_INT >= 17){
-            DB_PATH = context.getApplicationInfo().dataDir+"/databases/";
-        }else{
-            DB_PATH = "/data/data/"+context.getPackageName()+"/databases/";
+        if (Build.VERSION.SDK_INT >= 17) {
+            DB_PATH = context.getApplicationInfo().dataDir + "/databases/";
+        } else {
+            DB_PATH = "/data/data/" + context.getPackageName() + "/databases/";
         }
 
         this.myContext = context;
+        try {
+            copyDataBase();
+        } catch (IOException e) {
+
+        }
     }
 
     @Override
-    public synchronized void close(){
-        if(myDataBase != null)
+    public synchronized void close() {
+        if (myDataBase != null)
             myDataBase.close();
         super.close();
     }
@@ -55,7 +61,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         if (checkDB != null) {
             checkDB.close();
             return true;
-        }else{
+        } else {
             return false;
         }
     }
@@ -94,11 +100,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     /**
      * Creates a empty database on the system and rewrites it with your own database.
      */
-    public void createDataBase(){
+    public void createDataBase() {
 
         boolean dbExist = checkDataBase();
 
-        if (!dbExist){
+        if (dbExist) {
+        } else {
             //By calling this method and empty database will be created into the default system path
             //of your application so we are gonna be able to overwrite that database with our database.
             this.getReadableDatabase();
@@ -112,74 +119,25 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db1) {
-//        db1.execSQL(
-//                ("CREATE TABLE recipe (id INTEGER PRIMARY KEY, name TEXT, rarity INTEGER, time TEXT, standard TEXT, heavy TEXT)")
-//        );
+
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db2, int oldVersion, int newVersion) {
-        if(newVersion>oldVersion){
-            try{
+        if (newVersion > oldVersion) {
+            try {
                 copyDataBase();
-            }catch (IOException e){
+            } catch (IOException e) {
                 Log.e("onUpgrade:", "Unable to copy database");
             }
         }
     }
 
-//    public void insertItem(String name, int rarity, String time, String standard, String heavy) {
-//        SQLiteDatabase db3 = this.getWritableDatabase();
-//        ContentValues values = new ContentValues();
-//        values.put("name", name);
-//        values.put("rarity", rarity);
-//        values.put("time", time);
-//        values.put("standard", standard);
-//        values.put("heavy", heavy);
-//        db3.insert("recipe", null, values);
-//        db3.close();
-//    }
-
-//    public ArrayList<String> getNameS(int rare, String set) {
-//        ArrayList<String> temp = new ArrayList<>();
-//        SQLiteDatabase db4 = this.getWritableDatabase();
-//        String selectQuery = "SELECT name FROM recipe WHERE rarity =" + rare + " AND standard = '" + set + "'";
-//        Log.e("query", selectQuery);
-//
-//        String s = db4.getPath();
-//        Log.e("get path", s);
-//        Cursor cursor = db4.rawQuery(selectQuery, null);
-//        if (cursor.moveToFirst()) {
-//            do {
-//                temp.add(cursor.getString(0));
-//            } while (cursor.moveToNext());
-//        }
-//        cursor.close();
-//        db4.close();
-//        return temp;
-//    }
-//
-//    public ArrayList<String> getTimeS(int rare, String set) {
-//        ArrayList<String> temp = new ArrayList<>();
-//        SQLiteDatabase db4 = this.getWritableDatabase();
-//        String selectQuery = "SELECT time FROM recipe WHERE rarity =" + rare + " AND standard = '" + set + "'";
-//        Log.e("query", selectQuery);
-//        String s = db4.getPath();
-//        Cursor cursor = db4.rawQuery(selectQuery, null);
-//        if (cursor.moveToFirst()) {
-//            do {
-//                temp.add(cursor.getString(0));
-//            } while (cursor.moveToNext());
-//        }
-//        cursor.close();
-//        db4.close();
-//        return temp;
-//    }
 
     public String getNameS(int rare, String set) {
         String temp = "";
         SQLiteDatabase db4 = this.getWritableDatabase();
-        String selectQuery = "SELECT name FROM recipe WHERE rarity =" + rare + " AND standard = '" + set + "'";
+        String selectQuery = "SELECT name FROM dolls WHERE rarity =" + rare + " AND standard = '" + set + "'";
         Log.e("query", selectQuery);
 
         String s = db4.getPath();
@@ -198,7 +156,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public String getTimeS(int rare, String set) {
         String temp = "";
         SQLiteDatabase db4 = this.getWritableDatabase();
-        String selectQuery = "SELECT time FROM recipe WHERE rarity =" + rare + " AND standard = '" + set + "'";
+        String selectQuery = "SELECT time FROM dolls WHERE rarity =" + rare + " AND standard = '" + set + "'";
         Log.e("query", selectQuery);
         String s = db4.getPath();
         Cursor cursor = db4.rawQuery(selectQuery, null);
@@ -215,9 +173,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public String getNameH(int rare, String set) {
         String temp = "";
         SQLiteDatabase db4 = this.getWritableDatabase();
-        String selectQuery = "SELECT name FROM recipe WHERE rarity =" + rare + " AND heavy = '" + set + "'";
+        String selectQuery = "SELECT name FROM dolls WHERE rarity =" + rare + " AND heavy = '" + set + "'";
         Log.e("query", selectQuery);
-
         String s = db4.getPath();
         Log.e("get path", s);
         Cursor cursor = db4.rawQuery(selectQuery, null);
@@ -234,7 +191,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public String getTimeH(int rare, String set) {
         String temp = "";
         SQLiteDatabase db4 = this.getWritableDatabase();
-        String selectQuery = "SELECT time FROM recipe WHERE rarity =" + rare + " AND heavy = '" + set + "'";
+        String selectQuery = "SELECT time FROM dolls WHERE rarity =" + rare + " AND heavy = '" + set + "'";
         Log.e("query", selectQuery);
         String s = db4.getPath();
         Cursor cursor = db4.rawQuery(selectQuery, null);
@@ -246,5 +203,137 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         cursor.close();
         db4.close();
         return temp;
+    }
+
+    public ArrayList<Integer> getIndexList() {
+        ArrayList<Integer> temp = new ArrayList<>();
+
+        SQLiteDatabase db4 = this.getWritableDatabase();
+        String selectQuery = "SELECT id FROM dolls";
+        Log.e("query", selectQuery);
+        Cursor cursor = db4.rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
+            do {
+                temp.add(cursor.getInt(0));
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        db4.close();
+        return temp;
+    }
+
+    public indexHolder getDollInfo(int id) {
+        indexHolder d = new indexHolder();
+        SQLiteDatabase db4 = this.getWritableDatabase();
+        String selectQuery = "SELECT id, name, rarity, type, time, obtain, hp, firepower, evasion, accuracy, rof, clip, armor, speed, ap, critical, skill, skilld, skillic, skillcd, skillUrl, tile, tiled, intro, pictureUrl, pictureDUrl FROM dolls WHERE id = " + id;
+        Cursor cursor = db4.rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
+            do {
+                d = new indexHolder(
+                        cursor.getInt(0),
+                        cursor.getString(1),
+                        cursor.getInt(2),
+                        cursor.getString(3),
+                        cursor.getString(4),
+                        cursor.getString(5),
+                        cursor.getInt(6),
+                        cursor.getInt(7),
+                        cursor.getInt(8),
+                        cursor.getInt(9),
+                        cursor.getInt(10),
+                        cursor.getInt(11),
+                        cursor.getInt(12),
+                        cursor.getInt(13),
+                        cursor.getInt(14),
+                        cursor.getInt(15),
+                        cursor.getString(16),
+                        cursor.getString(17),
+                        cursor.getInt(18),
+                        cursor.getInt(19),
+                        cursor.getString(20),
+                        cursor.getString(21),
+                        cursor.getString(22),
+                        cursor.getString(23),
+                        cursor.getString(24),
+                        cursor.getString(25)
+                );
+            } while (cursor.moveToNext());
+        }
+        return d;
+    }
+
+    public ArrayList<indexHolder> getIndex() {
+        ArrayList<indexHolder> temp = new ArrayList<>();
+        indexHolder hold;
+        SQLiteDatabase db4 = this.getWritableDatabase();
+        String selectQuery = "SELECT id, name, thumbURL, type, rarity FROM dolls";
+        Log.e("query", selectQuery);
+        Cursor cursor = db4.rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
+            do {
+                hold = new indexHolder(
+                        cursor.getInt(0),
+                        cursor.getString(1),
+                        cursor.getString(2),
+                        cursor.getString(3),
+                        cursor.getInt(4)
+                );
+                temp.add(hold);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        db4.close();
+        return temp;
+    }
+
+    public ArrayList<Doll> getAll() {
+        ArrayList<Doll> arr = new ArrayList<>();
+        Doll temp;
+
+        SQLiteDatabase db4 = this.getWritableDatabase();
+        String selectQuery = "SELECT * FROM dolls";
+        Log.e("query", selectQuery);
+        Cursor cursor = db4.rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
+            do {
+                temp = new Doll(
+                        cursor.getInt(0),
+                        cursor.getString(1),
+                        cursor.getInt(2),
+                        cursor.getString(3),
+                        cursor.getString(4),
+                        cursor.getString(5),
+                        cursor.getString(6),
+                        cursor.getString(7),
+                        cursor.getString(8),
+                        cursor.getInt(9),
+                        cursor.getInt(10),
+                        cursor.getInt(11),
+                        cursor.getInt(12),
+                        cursor.getInt(13),
+                        cursor.getInt(14),
+                        cursor.getInt(15),
+                        cursor.getInt(16),
+                        cursor.getInt(17),
+                        cursor.getInt(18),
+                        cursor.getString(19),
+                        cursor.getString(20),
+                        cursor.getInt(21),
+                        cursor.getString(22),
+                        cursor.getString(23),
+                        cursor.getInt(24),
+                        cursor.getInt(25),
+                        cursor.getInt(26),
+                        cursor.getInt(27),
+                        cursor.getInt(28),
+                        cursor.getString(29),
+                        cursor.getString(30)
+                );
+                arr.add(temp);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        db4.close();
+        return arr;
     }
 }

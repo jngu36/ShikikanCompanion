@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="#8C8C8C"
     tools:context="com.example.shikikancompanion.Logistic">
 
 </android.support.constraint.ConstraintLayout>
