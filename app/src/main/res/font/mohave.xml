@@ -3,5 +3,11 @@
     <font
         android:fontStyle="normal"
         android:fontWeight="400"
-        android:font="@font/mohavesemibold" />
+        android:font="@font/mohaveregular" />
+
+    <font
+    android:fontStyle="italic"
+    android:fontWeight="400"
+    android:font="@font/mohaveitalic" />
+
 </font-family>

@@ -75,9 +75,14 @@ public class TacticalDisplay extends Activity {
 
     private void displayInfo(indexHolder doll) {
 
+        TextView name, hp, firepower, evasion, accuracy, rof, tileD, skillN, skillC, skillD, critical, ap, speed, armor, clip, time;
+
+        //Misc Setup
+        time = findViewById(R.id.time);
+        time.setText(doll.getTime());
         //Setting up stat data
 //        Left side
-        TextView name, hp, firepower, evasion, accuracy, rof, tileD, skillN, skillC, skillD, critical, ap, speed, armor, clip;
+
         name = findViewById(R.id.name);
         hp = findViewById(R.id.health);
         firepower = findViewById(R.id.firepower);
@@ -117,8 +122,9 @@ public class TacticalDisplay extends Activity {
         skillD = findViewById(R.id.skillD);
 
         skillN.setText(doll.getSkill());
-        String cd = (doll.getSkillic() == 0 && doll.getSkillcd() == 0) ? "Passive" : doll.getSkillic() + "s initial cooldown, " + doll.getSkillcd()+"s cooldown";
-        skillC.setText(cd);
+//        String cd = (doll.getSkillic() == 0 && doll.getSkillcd() == 0) ? "Passive" : doll.getSkillic() + "s initial cooldown, " + doll.getSkillcd()+"s cooldown";
+        skillC.setText(
+                (doll.getSkillic() == 0 && doll.getSkillcd() == 0) ? "Passive" : doll.getSkillic() + "s initial cooldown, " + doll.getSkillcd()+"s cooldown");
         skillD.setText(doll.getSkilld());
 
         //Tile

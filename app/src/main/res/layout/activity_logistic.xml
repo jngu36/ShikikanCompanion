@@ -4,8 +4,3638 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center"
-    android:background="#8C8C8C"
-    tools:context="com.example.shikikancompanion.Logistic">
+    android:orientation="vertical"
+    tools:context=".Logistic">
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/updateLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <!--Upper layer-->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#000000">
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/manpower"/>
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ammo"/>
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ration"/>
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/part"/>
+            </LinearLayout>
+            <!--Hourly-->
+            <LinearLayout
+                android:id="@+id/hourlyLayer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/mpHour"
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:textSize="22dp" />
+
+                <TextView
+                    android:id="@+id/amHour"
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:textSize="22dp" />
+
+                <TextView
+                    android:id="@+id/rtHour"
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:textSize="22dp" />
+
+                <TextView
+                    android:id="@+id/ptHour"
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:textSize="22dp" />
+            </LinearLayout>
+            <!--Total-->
+            <LinearLayout
+                android:id="@+id/totalLayer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/mpTotal"
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:textSize="22dp" />
+
+                <TextView
+                    android:id="@+id/amTotal"
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:textSize="22dp" />
+
+                <TextView
+                    android:id="@+id/rtTotal"
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:textSize="22dp" />
+
+                <TextView
+                    android:id="@+id/ptTotal"
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:textSize="22dp" />
+            </LinearLayout>
+        </LinearLayout>
+        <!--Horizontal break-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#000000" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <CheckBox
+                        android:id="@+id/toggle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/toggle"/>
+                </LinearLayout>
+
+                <!--Chapter 0-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:fontFamily="@font/mohavesemibold"
+                    android:text="@string/chapter0"
+                    android:textSize="28dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/c00_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:text="1" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#aaacaf"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/manpower_00_1"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ammo_00_1"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ration_00_1"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/part_00_1"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/c00_1_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent" />
+
+                            <ImageView
+                                android:id="@+id/bonus_00_1_1"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:visibility="invisible" />
+
+                            <ImageView
+                                android:id="@+id/bonus_00_1_2"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:visibility="invisible" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/c00_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:text="2" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#aaacaf"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/manpower_00_2"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ammo_00_2"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ration_00_2"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/part_00_2"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/c00_2_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:id="@+id/bonus_00_2_1"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:visibility="invisible" />
+
+                            <ImageView
+                                android:id="@+id/bonus_00_2_2"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:visibility="invisible" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/c00_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:text="3" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#aaacaf"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/manpower_00_3"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ammo_00_3"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ration_00_3"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/part_00_3"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/c00_3_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:id="@+id/bonus_00_3_1"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <ImageView
+                                android:id="@+id/bonus_00_3_2"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/c00_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:text="4" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#aaacaf"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/manpower_00_4"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ammo_00_4"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ration_00_4"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/part_00_4"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/c00_4_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:id="@+id/bonus_00_4_1"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <ImageView
+                                android:id="@+id/bonus_00_4_2"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+                <!--Chapter 1-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:fontFamily="@font/mohavesemibold"
+                    android:text="@string/chapter1"
+                    android:textSize="28dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/c01_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:text="1" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#aaacaf"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/manpower_01_1"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ammo_01_1"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ration_01_1"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/part_01_1"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/c01_1_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:id="@+id/bonus_01_1_1"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <ImageView
+                                android:id="@+id/bonus_01_1_2"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/c01_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:text="2" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#aaacaf"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/manpower_01_2"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ammo_01_2"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ration_01_2"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/part_01_2"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/c01_2_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:id="@+id/bonus_01_2_1"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <ImageView
+                                android:id="@+id/bonus_01_2_2"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/c01_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:text="3" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#aaacaf"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/manpower_01_3"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ammo_01_3"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ration_01_3"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/part_01_3"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/c01_3_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:id="@+id/bonus_01_3_1"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <ImageView
+                                android:id="@+id/bonus_01_3_2"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/c01_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:text="4" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#aaacaf"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/manpower_01_4"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ammo_01_4"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ration_01_4"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/part_01_4"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/c01_4_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:id="@+id/bonus_01_4_1"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <ImageView
+                                android:id="@+id/bonus_01_4_2"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!--Chapter 2-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:fontFamily="@font/mohavesemibold"
+                    android:text="@string/chapter2"
+                    android:textSize="28dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/c02_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:text="1" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#aaacaf"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/manpower_02_1"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ammo_02_1"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ration_02_1"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/part_02_1"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/c02_1_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:id="@+id/bonus_02_1_1"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <ImageView
+                                android:id="@+id/bonus_02_1_2"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/c02_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:text="2" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#aaacaf"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/manpower_02_2"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ammo_02_2"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ration_02_2"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/part_02_2"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/c02_2_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:id="@+id/bonus_02_2_1"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <ImageView
+                                android:id="@+id/bonus_02_2_2"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/c02_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:text="3" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#aaacaf"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/manpower_02_3"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ammo_02_3"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ration_02_3"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/part_02_3"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/c02_3_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:id="@+id/bonus_02_3_1"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <ImageView
+                                android:id="@+id/bonus_02_3_2"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/c02_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:text="4" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#aaacaf"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/manpower_02_4"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ammo_02_4"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ration_02_4"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/part_02_4"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/c02_4_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:id="@+id/bonus_02_4_1"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <ImageView
+                                android:id="@+id/bonus_02_4_2"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!--Chapter 3-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:fontFamily="@font/mohavesemibold"
+                    android:text="@string/chapter3"
+                    android:textSize="28dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/c03_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:text="1" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#aaacaf"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/ammo_03_1"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ration_03_1"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/part_03_1"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/manpower_03_1"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:layout_marginLeft="3dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/c03_1_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:id="@+id/bonus_03_1_1"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <ImageView
+                                android:id="@+id/bonus_03_1_2"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/c03_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:text="2" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#aaacaf"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/manpower_03_2"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:layout_marginLeft="3dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ammo_03_2"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ration_03_2"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/part_03_2"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/c03_2_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:id="@+id/bonus_03_2_1"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <ImageView
+                                android:id="@+id/bonus_03_2_2"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/c03_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:text="3" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#aaacaf"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/manpower_03_3"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ammo_03_3"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ration_03_3"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/part_03_3"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/c03_3_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:id="@+id/bonus_03_3_1"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <ImageView
+                                android:id="@+id/bonus_03_3_2"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/c03_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:text="4" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#aaacaf"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/manpower_03_4"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ammo_03_4"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ration_03_4"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/part_03_4"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/c03_4_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:id="@+id/bonus_03_4_1"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <ImageView
+                                android:id="@+id/bonus_03_4_2"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!--Chapter 4-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:fontFamily="@font/mohavesemibold"
+                    android:text="@string/chapter4"
+                    android:textSize="28dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/c04_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:text="1" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#aaacaf"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/manpower_04_1"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ammo_04_1"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ration_04_1"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/part_04_1"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/c04_1_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:id="@+id/bonus_04_1_1"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <ImageView
+                                android:id="@+id/bonus_04_1_2"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/c04_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:text="2" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#aaacaf"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/manpower_04_2"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ammo_04_2"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ration_04_2"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/part_04_2"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/c04_2_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:id="@+id/bonus_04_2_1"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <ImageView
+                                android:id="@+id/bonus_04_2_2"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/c04_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:text="3" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#aaacaf"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/manpower_04_3"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ammo_04_3"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ration_04_3"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/part_04_3"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/c04_3_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:id="@+id/bonus_04_3_1"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <ImageView
+                                android:id="@+id/bonus_04_3_2"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/c04_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:text="4" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#aaacaf"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/manpower_04_4"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ammo_04_4"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ration_04_4"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/part_04_4"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/c04_4_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:id="@+id/bonus_04_4_1"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <ImageView
+                                android:id="@+id/bonus_04_4_2"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!--Chapter 5-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:fontFamily="@font/mohavesemibold"
+                    android:text="@string/chapter5"
+                    android:textSize="28dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/c05_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:text="1" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#aaacaf"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/manpower_05_1"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ammo_05_1"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ration_05_1"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/part_05_1"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/c05_1_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:id="@+id/bonus_05_1_1"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <ImageView
+                                android:id="@+id/bonus_05_1_2"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/c05_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:text="2" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#aaacaf"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/manpower_05_2"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ammo_05_2"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ration_05_2"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/part_05_2"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/c05_2_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:id="@+id/bonus_05_2_1"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <ImageView
+                                android:id="@+id/bonus_05_2_2"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/c05_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:text="3" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#aaacaf"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/manpower_05_3"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ammo_05_3"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ration_05_3"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/part_05_3"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/c05_3_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:id="@+id/bonus_05_3_1"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <ImageView
+                                android:id="@+id/bonus_05_3_2"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/c05_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:text="4" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#aaacaf"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/manpower_05_4"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ammo_05_4"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ration_05_4"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/part_05_4"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/c05_4_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:id="@+id/bonus_05_4_1"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <ImageView
+                                android:id="@+id/bonus_05_4_2"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!--Chapter 6-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:fontFamily="@font/mohavesemibold"
+                    android:text="@string/chapter6"
+                    android:textSize="28dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/c06_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:text="1" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#aaacaf"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/manpower_06_1"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ammo_06_1"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ration_06_1"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/part_06_1"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/c06_1_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:id="@+id/bonus_06_1_1"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <ImageView
+                                android:id="@+id/bonus_06_1_2"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/c06_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:text="2" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#aaacaf"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/manpower_06_2"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ammo_06_2"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ration_06_2"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/part_06_2"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/c06_2_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:id="@+id/bonus_06_2_1"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <ImageView
+                                android:id="@+id/bonus_06_2_2"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/c06_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:text="3" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#aaacaf"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/manpower_06_3"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ammo_06_3"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ration_06_3"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/part_06_3"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/c06_3_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:id="@+id/bonus_06_3_1"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <ImageView
+                                android:id="@+id/bonus_06_3_2"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/c06_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:text="4" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#aaacaf"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/manpower_06_4"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ammo_06_4"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ration_06_4"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/part_06_4"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/c06_4_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:id="@+id/bonus_06_4_1"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <ImageView
+                                android:id="@+id/bonus_06_4_2"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!--Chapter 7-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:fontFamily="@font/mohavesemibold"
+                    android:text="@string/chapter7"
+                    android:textSize="28dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/c07_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:text="1" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#aaacaf"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/manpower_07_1"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ammo_07_1"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ration_07_1"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/part_07_1"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/c07_1_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:id="@+id/bonus_07_1_1"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <ImageView
+                                android:id="@+id/bonus_07_1_2"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/c07_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:text="2" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#aaacaf"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/manpower_07_2"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ammo_07_2"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ration_07_2"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/part_07_2"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/c07_2_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:id="@+id/bonus_07_2_1"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <ImageView
+                                android:id="@+id/bonus_07_2_2"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/c07_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:text="3" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#aaacaf"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/manpower_07_3"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ammo_07_3"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ration_07_3"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/part_07_3"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/c07_3_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:id="@+id/bonus_07_3_1"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <ImageView
+                                android:id="@+id/bonus_07_3_2"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/c07_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:text="4" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#aaacaf"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/manpower_07_4"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ammo_07_4"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ration_07_4"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/part_07_4"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/c07_4_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:id="@+id/bonus_07_4_1"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <ImageView
+                                android:id="@+id/bonus_07_4_2"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <!--Warning-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="10dp"
+                        android:background="#ff0000" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="5dp"
+                            android:src="@drawable/warning" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/warning"
+                            android:textColor="#ff0000"
+                            android:textSize="20dp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="#ff0000" />
+                </LinearLayout>
+
+                <!--Chapter 8-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:fontFamily="@font/mohavesemibold"
+                    android:text="@string/chapter8"
+                    android:textSize="28dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/c08_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:text="1" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#aaacaf"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/manpower_08_1"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ammo_08_1"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ration_08_1"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/part_08_1"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/c08_1_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:id="@+id/bonus_08_1_1"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <ImageView
+                                android:id="@+id/bonus_08_1_2"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/c08_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:text="2" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#aaacaf"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/manpower_08_2"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ammo_08_2"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ration_08_2"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/part_08_2"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/c08_2_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:id="@+id/bonus_08_2_1"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <ImageView
+                                android:id="@+id/bonus_08_2_2"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/c08_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:text="3" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#aaacaf"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/manpower_08_3"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ammo_08_3"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ration_08_3"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/part_08_3"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/c08_3_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:id="@+id/bonus_08_3_1"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <ImageView
+                                android:id="@+id/bonus_08_3_2"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/c08_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:text="4" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#aaacaf"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/manpower_08_4"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ammo_08_4"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ration_08_4"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/part_08_4"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/c08_4_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:id="@+id/bonus_08_4_1"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <ImageView
+                                android:id="@+id/bonus_08_4_2"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!--Chapter 9-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:fontFamily="@font/mohavesemibold"
+                    android:text="@string/chapter9"
+                    android:textSize="28dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/c09_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:text="1" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#aaacaf"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/manpower_09_1"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ammo_09_1"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ration_09_1"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/part_09_1"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/c09_1_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:id="@+id/bonus_09_1_1"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <ImageView
+                                android:id="@+id/bonus_09_1_2"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/c09_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:text="2" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#aaacaf"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/manpower_09_2"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ammo_09_2"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ration_09_2"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/part_09_2"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/c09_2_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:id="@+id/bonus_09_2_1"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <ImageView
+                                android:id="@+id/bonus_09_2_2"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/c09_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:text="3" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#aaacaf"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/manpower_09_3"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ammo_09_3"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ration_09_3"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/part_09_3"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/c09_3_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:id="@+id/bonus_09_3_1"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <ImageView
+                                android:id="@+id/bonus_09_3_2"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/c09_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:text="4" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#aaacaf"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/manpower_09_4"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ammo_09_4"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/ration_09_4"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/part_09_4"
+                                android:layout_width="45dp"
+                                android:layout_height="20dp"
+                                android:gravity="center"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/c09_4_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:id="@+id/bonus_09_4_1"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+
+                            <ImageView
+                                android:id="@+id/bonus_09_4_2"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

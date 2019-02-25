@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Shikikan Companion</string>
+    <string name="about">About</string>
     <string name="menuRecipe">Recipe Calculator</string>
     <string name="menuList">Tactical Doll List</string>
     <string name="menuLogistic">Logistic Calculator</string>
@@ -15,6 +16,7 @@
     <string name="recipeHeavy">Heavy Production</string>
     <string name="hideNonEN">Hide Unreleased in EN</string>
     <string name="Calculate">Calculate</string>
+    <string name="toggle">Toggle between normal and resources per hour</string>
 
     <!--Display Doll-->
     <string name="time">Time</string>
@@ -33,4 +35,17 @@
     <string name="skill">Skill</string>
     <string name="stats">Stats</string>
 
+    <!--Logistics-->
+    <string name="chapter0">Chapter 0</string>
+    <string name="chapter1">Chapter 1</string>
+    <string name="chapter2">Chapter 2</string>
+    <string name="chapter3">Chapter 3</string>
+    <string name="chapter4">Chapter 4</string>
+    <string name="chapter5">Chapter 5</string>
+    <string name="chapter6">Chapter 6</string>
+    <string name="chapter7">Chapter 7</string>
+    <string name="chapter8">Chapter 8</string>
+    <string name="chapter9">Chapter 9</string>
+
+    <string name="warning">Note: Logistics after Chapter 7 are not released yet in EN</string>
 </resources>

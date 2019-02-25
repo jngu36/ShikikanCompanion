@@ -29,5 +29,16 @@
                     android:title="@string/menuBattery" />
             </group>
         </menu>
+
+    </item>
+    <item android:title="About">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/about"
+                    android:icon="@drawable/manpower"
+                    android:title="@string/about" />
+            </group>
+        </menu>
     </item>
 </menu>

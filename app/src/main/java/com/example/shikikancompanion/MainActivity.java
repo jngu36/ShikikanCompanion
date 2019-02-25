@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.support.v7.widget.Toolbar;
+import android.webkit.WebView;
 import android.widget.TextView;
 
 
@@ -58,11 +59,17 @@ public class MainActivity extends AppCompatActivity {
                             case R.id.List:
                                 intent = new Intent(MainActivity.this, Tlist.class);
                                 startActivity(intent);
+                                break;
+                            case R.id.about:
+                                intent = new Intent(MainActivity.this, About.class);
+                                startActivity(intent);
+                                break;
                         }
                         return true;
                     }
                 });
-
+        WebView wb = findViewById(R.id.web);
+        wb.loadUrl("https://mobile.twitter.com/GirlsFrontlineE");
     }
 
     @Override
